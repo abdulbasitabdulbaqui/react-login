@@ -4,18 +4,31 @@ function App() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const onEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const onPasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const handleLogin = () => {
+    console.log(email)
+    console.log(password)
+  };
+
   return (
     <div>
       <h3>Login form</h3>
       <label>Email: </label>
-      <input value={email} />
+      <input type="text" value={email} onChange={onEmailChange} />
       <br />
       <br />
       <label>Password: </label>
-      <input value={password}></input>
+      <input type="text" value={password} onChange={onPasswordChange}></input>
       <br />
       <br />
-      <button>Login</button>
+      <button onClick={handleLogin}>Login</button>
     </div>
   );
 }
